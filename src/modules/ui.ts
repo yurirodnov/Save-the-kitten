@@ -1,6 +1,7 @@
 export class UI {
-  constructor() {
-
+  userScore: number
+  constructor(userScore: number) {
+    this.userScore = userScore;
   }
 
   drawUI(): void {
