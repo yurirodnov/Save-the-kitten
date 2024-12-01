@@ -22,6 +22,8 @@ window.addEventListener('load', () => {
   const background = new Background(1000, 740);
   const kitten = new Kitten(70, 70, canvasBaseWidth, canvasBaseHeight);
   const score = new Score(0, 0)
+  const timer = new Timer();
+  timer.startTimer();
 
 
   // Game loop
@@ -29,6 +31,7 @@ window.addEventListener('load', () => {
     background.drawBackground(canvasCtx);
     kitten.drawKitten(canvasCtx)
     score.drawScore(canvasCtx);
+    timer.drawTimer(canvasCtx)
 
     requestAnimationFrame(animateGame);
   }

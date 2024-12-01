@@ -27,7 +27,7 @@ export class Score {
     const currentScoreText: string = `Score: ${this.currentScore}`
     context.font = '22px Helvetica';
     context.strokeStyle = 'black';
-    context.lineWidth = 3;
+    context.lineWidth = 4;
     context.strokeText(currentScoreText, 10, 30);
     context.fillStyle = 'white';
     context.fillText(currentScoreText, 10, 30);
@@ -37,7 +37,7 @@ export class Score {
     const bestScoreText: string = `Best score: ${this.bestScore}`;
     context.font = '22px Arial';
     context.strokeStyle = 'black';
-    context.lineWidth = 3;
+    context.lineWidth = 4;
     context.strokeText(bestScoreText, 10, 60);
     context.fillStyle = '#fffff';
     context.fillText(bestScoreText, 10, 60);
