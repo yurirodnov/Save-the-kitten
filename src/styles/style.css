@@ -16,3 +16,10 @@ body {
   display: flex;
   border: 1px solid rgb(160, 160, 160);
 }
+
+#coin,
+#grass,
+#kitten,
+#zombie {
+  display: none;
+}
