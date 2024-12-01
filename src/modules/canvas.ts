@@ -14,7 +14,6 @@ export class InitCanvas {
     }
 
     this.context = this.canvas.getContext('2d');
-
   }
 
   getCanvas() {

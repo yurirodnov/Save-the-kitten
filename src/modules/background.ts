@@ -1,4 +1,4 @@
-export class Backgorund {
+export class Background {
   private canvasWidth: number;
   private canvasHeight: number;
   private backgroundImg: HTMLImageElement | null;
@@ -17,7 +17,7 @@ export class Backgorund {
     this.height = 100;
   }
 
-  draw(context: CanvasRenderingContext2D) {
+  drawBackground(context: CanvasRenderingContext2D): void {
     const imgWidth = this.width;
     const imgHeight = this.height;
 
@@ -31,9 +31,4 @@ export class Backgorund {
 
   }
 
-  // draw(context: CanvasRenderingContext2D) {
-  //   if (this.backgroundImg) {
-  //     context.drawImage(this.backgroundImg, 0, 0, this.width, this.height);
-  //   }
-  // }
 }
