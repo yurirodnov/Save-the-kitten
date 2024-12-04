@@ -16,7 +16,7 @@ export class Canvas {
     this.context = this.canvas.getContext('2d');
   }
 
-  getCanvas() {
+  getCanvas(): HTMLCanvasElement {
     return this.canvas;
   }
 
