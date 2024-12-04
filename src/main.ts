@@ -36,6 +36,7 @@ window.addEventListener('load', () => {
     kitten.drawKitten(canvasCtx)
     score.drawScore(canvasCtx);
     timer.drawTimer(canvasCtx);
+
     enemies.createEnemies();
     enemies.drawEnemies(canvasCtx);
 

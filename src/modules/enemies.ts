@@ -5,7 +5,7 @@ import { EnemyEntity } from "../types/interfaces";
 
 export class Enemies {
   private enemies: EnemyEntity[] = [];
-  private enemyID: number = 1;
+  //private enemyID: number = 1;
   private zombieImg = document.getElementById('zombie') as HTMLImageElement;
   private difficulty: number;
   private enemieWidth: number;
@@ -27,18 +27,33 @@ export class Enemies {
 
 
   createEnemies(): void {
-    for (let i = this.enemyID; i < this.difficulty; i += 1) {
-      this.enemies.push({
-        id: i,
-        name: generate(),
-      })
-      console.log('Zombie was born!')
+    if (this.enemies.length === 0) {
+      for (let i: number = 0; i < this.difficulty; i += 1) {
+        this.enemies.push({
+          id: i,
+          name: generate(),
+        })
+        console.log(this.enemies)
+      }
     }
+    else {
+      null
+    }
+
   }
 
   drawEnemies(context: CanvasRenderingContext2D): void {
-    for (let i = 0; i <= this.enemies.length; i += 1) {
+    for (let i: number = 0; i < this.enemies.length; i += 1) {
       context.drawImage(this.zombieImg, this.xPosition, this.yPosition, this.enemieWidth, this.enemieHeight)
+
+
+      const zombieName: string = `${this.enemies[i].name}`
+      context.font = '22px Helvetica';
+      context.strokeStyle = 'black';
+      context.lineWidth = 4;
+      context.strokeText(zombieName, (this.xPosition + 25), (this.yPosition + this.enemieHeight + 30));
+      context.fillStyle = 'white';
+      context.fillText(zombieName, (this.xPosition + 25), (this.yPosition + this.enemieHeight + 30));
 
     }
   }
