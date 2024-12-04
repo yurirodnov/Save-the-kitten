@@ -1,10 +1,10 @@
 import { generate, count } from "random-words";
-import { EnemyEntity } from "../types/interfaces";
+import { EnemyEntityType } from "../types/interfaces";
 
 
 
 export class Enemies {
-  private enemies: EnemyEntity[] = [];
+  private enemies: EnemyEntityType[] = [];
   //private enemyID: number = 1;
   private zombieImg = document.getElementById('zombie') as HTMLImageElement;
   private difficulty: number;
@@ -43,6 +43,21 @@ export class Enemies {
   }
 
   drawEnemies(context: CanvasRenderingContext2D): void {
+
+
+    if (this.enemies.length === 0) {
+      for (let i: number = 0; i < this.difficulty; i += 1) {
+        this.enemies.push({
+          id: i,
+          name: generate(),
+        })
+        console.log(this.enemies)
+      }
+    }
+    else {
+      null
+    }
+
     for (let i: number = 0; i < this.enemies.length; i += 1) {
       context.drawImage(this.zombieImg, this.xPosition, this.yPosition, this.enemieWidth, this.enemieHeight)
 
