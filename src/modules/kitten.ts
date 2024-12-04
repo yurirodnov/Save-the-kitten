@@ -15,7 +15,9 @@ export class Kitten {
     this.xPosition = Math.floor(this.canvasWidth / 2 - this.kittenWidth / 2);
     this.yPosition = Math.floor(this.canvasHeight / 2 - this.kittenHeight / 2);
     this.kittenImage = document.getElementById('kitten') as HTMLImageElement;
-
+    if (!this.kittenImage) {
+      throw new Error("Kitten image not found in the DOM");
+    }
   }
 
   drawKitten(context: CanvasRenderingContext2D): void {
@@ -27,7 +29,7 @@ export class Kitten {
   }
 
   sayThanks(): string {
-    return ("Thank you!")
+    return "Thank you!"
   }
 
 }

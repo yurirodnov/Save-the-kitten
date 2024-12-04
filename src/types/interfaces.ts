@@ -1,4 +1,4 @@
 export interface EnemyEntity {
   id: number;
-  name: string;
+  name: string | string[];
 }
