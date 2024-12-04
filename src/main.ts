@@ -5,7 +5,7 @@ import { Score } from './modules/score';
 import { Timer } from './modules/timer';
 import { Enemies } from './modules/enemies';
 import { UI } from './modules/ui';
-import './styles/style.css'
+import './styles/styles.css'
 
 
 window.addEventListener('load', () => {
