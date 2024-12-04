@@ -2,7 +2,6 @@ export class Timer {
   private seconds: number = 0;
   private intervalID: number | undefined;
 
-  constructor() { }
 
   startTimer(): void {
     this.intervalID = setInterval(() => {
@@ -10,8 +9,7 @@ export class Timer {
     }, 1000)
   }
 
-  stopTimer() {
-    // Остановка таймера
+  stopTimer(): void {
     if (this.intervalID !== undefined) {
       clearInterval(this.intervalID);
     }
@@ -25,8 +23,6 @@ export class Timer {
     const timer = `${hours.toString().padStart(2, '0')}:${minutes
       .toString()
       .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-    // Очистка предыдущего текста
 
 
     context.font = '22px Helvetica';

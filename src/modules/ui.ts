@@ -1,8 +1,13 @@
-export class UI {
-  userScore: number
+interface Zombie {
+  id: number;
+  name: string;
+}
 
-  constructor(userScore: number) {
-    this.userScore = userScore;
+export class UI {
+  private zombiesOnScreen: Zombie[];
+
+  constructor(zombiesOnScreen: Zombie[]) {
+    this.zombiesOnScreen = zombiesOnScreen;
   }
 
   drawUI(): void {

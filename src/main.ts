@@ -3,6 +3,7 @@ import { Background } from './modules/background';
 import { Kitten } from './modules/kitten';
 import { Score } from './modules/score';
 import { Timer } from './modules/timer';
+import { Enemies } from './modules/enemies';
 import { UI } from './modules/ui';
 import './styles/style.css'
 
