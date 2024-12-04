@@ -4,6 +4,7 @@ import { Kitten } from './entities/kitten';
 import { Score } from './entities/score';
 import { Timer } from './entities/timer';
 import { Enemies } from './entities/enemies';
+import { Input } from './entities/input';
 import './styles/styles.css'
 
 
@@ -23,8 +24,11 @@ window.addEventListener('load', () => {
   const kitten = new Kitten(70, 70, canvasBaseWidth, canvasBaseHeight);
   const score = new Score(0, 0)
   const timer = new Timer();
+
   timer.startTimer();
   const enemies = new Enemies();
+  const input = new Input();
+  const inputElement = input.getInput();
 
   const animateGame = () => {
     background.drawBackground(canvasCtx);
@@ -40,5 +44,6 @@ window.addEventListener('load', () => {
   animateGame();
 
   app?.appendChild(canvasElement);
+  app?.appendChild(inputElement)
 })
 
