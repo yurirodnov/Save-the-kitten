@@ -1,10 +1,9 @@
-import { Canvas } from './modules/canvas';
-import { Background } from './modules/background';
-import { Kitten } from './modules/kitten';
-import { Score } from './modules/score';
-import { Timer } from './modules/timer';
-import { Enemies } from './modules/enemies';
-import { UI } from './modules/ui';
+import { Canvas } from './entities/canvas';
+import { Background } from './entities/background';
+import { Kitten } from './entities/kitten';
+import { Score } from './entities/score';
+import { Timer } from './entities/timer';
+import { Enemies } from './entities/enemies';
 import './styles/styles.css'
 
 
@@ -27,10 +26,6 @@ window.addEventListener('load', () => {
   timer.startTimer();
   const enemies = new Enemies();
 
-
-
-
-  // Game loop
   const animateGame = () => {
     background.drawBackground(canvasCtx);
     kitten.drawKitten(canvasCtx)
@@ -43,8 +38,6 @@ window.addEventListener('load', () => {
     requestAnimationFrame(animateGame);
   }
   animateGame();
-
-
 
   app?.appendChild(canvasElement);
 })

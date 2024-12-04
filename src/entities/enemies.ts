@@ -43,8 +43,6 @@ export class Enemies {
   }
 
   drawEnemies(context: CanvasRenderingContext2D): void {
-
-
     if (this.enemies.length === 0) {
       for (let i: number = 0; i < this.difficulty; i += 1) {
         this.enemies.push({
@@ -61,7 +59,6 @@ export class Enemies {
     for (let i: number = 0; i < this.enemies.length; i += 1) {
       context.drawImage(this.zombieImg, this.xPosition, this.yPosition, this.enemieWidth, this.enemieHeight)
 
-
       const zombieName: string = `${this.enemies[i].name}`
       context.font = '22px Helvetica';
       context.strokeStyle = 'black';
@@ -69,7 +66,6 @@ export class Enemies {
       context.strokeText(zombieName, (this.xPosition + 25), (this.yPosition + this.enemieHeight + 30));
       context.fillStyle = 'white';
       context.fillText(zombieName, (this.xPosition + 25), (this.yPosition + this.enemieHeight + 30));
-
     }
   }
 }
