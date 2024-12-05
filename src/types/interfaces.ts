@@ -8,3 +8,8 @@ export interface StatsType {
   score: number;
   time: string;
 }
+
+export interface KittenCoordsType {
+  x: number;
+  y: number;
+}

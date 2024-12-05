@@ -1,3 +1,5 @@
+import { KittenCoordsType } from "../types/interfaces";
+
 export class Kitten {
   private kittenWidth: number;
   private kittenHeight: number;
@@ -24,8 +26,12 @@ export class Kitten {
     context.drawImage(this.kittenImage, this.xPosition, this.yPosition, this.kittenWidth, this.kittenHeight);
   }
 
-  getDead(): void {
+  getKittenCoords(): KittenCoordsType {
+    return { x: this.xPosition, y: this.yPosition }
+  }
 
+  getDead(): void {
+    null
   }
 
   sayThanks(): string {

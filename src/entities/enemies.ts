@@ -1,5 +1,6 @@
 import { generate, count } from "random-words";
 import { EnemyEntityType } from "../types/interfaces";
+import { KittenCoordsType } from "../types/interfaces";
 
 
 
@@ -13,18 +14,22 @@ export class Enemies {
   private xPosition: number;
   private yPosition: number;
   private enemySpeed: number;
+  private kittenCoords: KittenCoordsType
 
-  constructor(difficulty: number = 1, enemieWidth: number = 90, enemieHeight: number = 140, enemySpeed: number = 1) {
+  constructor(difficulty: number = 1,
+    enemieWidth: number = 90,
+    enemieHeight: number = 140,
+    enemySpeed: number = 1,
+    kittenCoords: KittenCoordsType = { x: 0, y: 0 }
+  ) {
     this.difficulty = difficulty;
     this.enemieWidth = enemieWidth;
     this.enemieHeight = enemieHeight;
     this.enemySpeed = enemySpeed;
     this.xPosition = 0;
     this.yPosition = 0;
-
+    this.kittenCoords = kittenCoords
   }
-
-
 
   createEnemies(): void {
     if (this.enemies.length === 0) {
@@ -39,23 +44,9 @@ export class Enemies {
     else {
       null
     }
-
   }
 
   drawEnemies(context: CanvasRenderingContext2D): void {
-    if (this.enemies.length === 0) {
-      for (let i: number = 0; i < this.difficulty; i += 1) {
-        this.enemies.push({
-          id: i,
-          name: generate(),
-        })
-        console.log(this.enemies)
-      }
-    }
-    else {
-      null
-    }
-
     for (let i: number = 0; i < this.enemies.length; i += 1) {
       context.drawImage(this.zombieImg, this.xPosition, this.yPosition, this.enemieWidth, this.enemieHeight)
 
@@ -67,5 +58,9 @@ export class Enemies {
       context.fillStyle = 'white';
       context.fillText(zombieName, (this.xPosition + 25), (this.yPosition + this.enemieHeight + 30));
     }
+  }
+
+  moveEnemies(): void {
+
   }
 }
