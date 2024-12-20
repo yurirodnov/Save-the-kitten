@@ -1,6 +1,7 @@
 export interface EnemyEntityType {
   id: number;
   name: string | string[];
+  speed: number;
 }
 
 export interface StatsType {

@@ -37,6 +37,7 @@ export class Enemies {
         this.enemies.push({
           id: i,
           name: generate(),
+          speed: 1
         })
         console.log(this.enemies)
       }
@@ -61,6 +62,21 @@ export class Enemies {
   }
 
   moveEnemies(): void {
+    const dx = this.kittenCoords.x - this.xPosition;
+    const dy = this.kittenCoords.y - this.yPosition;
+
+    // Вычисляем расстояние от врага до цели
+    const dist = Math.sqrt(Math.pow(this.kittenCoords.x - this.xPosition, 2) + Math.pow(this.kittenCoords.y - this.yPosition, 2));
+
+
+    // Нормализуем вектор направления (чтобы скорость была постоянной)
+    const dirX = dx / dist;
+    const dirY = dy / dist;
+
+
+    // Обновляем координаты врага с учетом его скорости
+    this.xPosition += dirX * this.enemySpeed;
+    this.yPosition += dirY * this.enemySpeed;
 
   }
 }

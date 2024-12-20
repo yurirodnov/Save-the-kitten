@@ -21,16 +21,21 @@ window.addEventListener('load', () => {
   const canvasElement = canvas.getCanvas();
   const canvasCtx = canvas.getCanvasContext();
   const background = new Background(1000, 740);
-  const kitten = new Kitten(70, 70, canvasBaseWidth, canvasBaseHeight);
+  const kitten = new Kitten(50, 50, canvasBaseWidth, canvasBaseHeight);
   const score = new Score(0, 0)
   const timer = new Timer();
 
   timer.startTimer();
-  const enemies = new Enemies();
+  const enemies = new Enemies(1, 70, 120, 0.7, kitten.getKittenCoords());
   const input = new Input();
   const inputElement = input.getInput();
 
+
+
+
   const animateGame = () => {
+
+
     background.drawBackground(canvasCtx);
     kitten.drawKitten(canvasCtx)
     score.drawScore(canvasCtx);
@@ -38,6 +43,7 @@ window.addEventListener('load', () => {
 
     enemies.createEnemies();
     enemies.drawEnemies(canvasCtx);
+    enemies.moveEnemies();
 
     requestAnimationFrame(animateGame);
   }
