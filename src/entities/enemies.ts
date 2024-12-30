@@ -1,4 +1,4 @@
-import { generate, count } from "random-words";
+import { generate } from "random-words";
 import { EnemyEntityType } from "../types/interfaces";
 import { KittenCoordsType } from "../types/interfaces";
 
